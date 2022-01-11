@@ -11,7 +11,18 @@ LazyData: true
 Imports: 
     dplyr,
     glue,
+    here,
     pbapply,
+    purrr,
     rlang,
     roadoi,
-    tidyr
+    tidyr,
+    utils,
+    xml2
+RoxygenNote: 7.1.2
+Suggests: 
+    rmarkdown,
+    knitr,
+    rsr,
+    tidyverse
+VignetteBuilder: knitr

@@ -1,4 +1,10 @@
 .Rproj.user
 .Rhistory
 .RData
-.Ruserdata
+inst/doc
+*.orig
+.env
+*.tex
+docs
+tmp
+Meta
