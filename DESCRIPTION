@@ -1,0 +1,17 @@
+Package: srtools
+Type: Package
+Title: miscellaneous tools for sysrev projects
+Version: 0.1.0
+Author: Thomas Luechtefeld
+Maintainer: Thomas Luechtefeld <tom@insilica.co>
+Description: Mostly just a wrapper around other packages that help with sysrev projects.
+License: file LICENSE
+Encoding: UTF-8
+LazyData: true
+Imports: 
+    dplyr,
+    glue,
+    pbapply,
+    rlang,
+    roadoi,
+    tidyr
