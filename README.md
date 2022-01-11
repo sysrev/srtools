@@ -14,9 +14,11 @@ library(purrr)
 library(pbapply)
 
 # get DOI from sysrev.com/p/39523 - Environmental Impacts Of Smart Local ...
-doi = rsr::get_articles(39523) |> slice(1:10) |>           # delete slice for more files
-  mutate(ern   = lapply(sr.record,srtools::en.ern)) |>     # ERN is an endnote id
-  unnest(ern) |> filter(srtools::is_doi(ern)) |> pull(ern) # get DOI ERN
+doi = rsr::get_articles(39523) |>                          # get sysrev 39523 articles
+  slice(1:10) |>                                           # only use the first 10 articles
+  mutate(ern   = lapply(sr.record,srtools::en.ern)) |>     # get ERNs (an endnote id type)
+  unnest(ern) |> filter(srtools::is_doi(ern)) |> pull(ern) # filter to ERNs that are DOIs
+
 # get open access data from https://docs.ropensci.org/roadoi/ 
 email = "you@somewhere.com"
 oa.tb = roadoi::oadoi_fetch(dois=doi,email=email,.flatten = T,.progress="text")
